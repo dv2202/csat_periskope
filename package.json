@@ -1,0 +1,44 @@
+{
+  "name": "csat-periskope",
+  "version": "0.1.0",
+  "private": true,
+  "description": "External CSAT + AI reply parser add-on for Periskope, built on the public API and webhooks.",
+  "scripts": {
+    "dev": "next dev",
+    "mock": "tsx mock-periskope/server.ts",
+    "dev:all": "concurrently -n app,mock -c cyan,magenta \"next dev\" \"tsx mock-periskope/server.ts\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "setup:periskope": "tsx scripts/setup-periskope.ts",
+    "worker": "tsx scripts/worker.ts",
+    "simulate": "tsx scripts/simulate.ts",
+    "eval": "tsx scripts/eval.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@google/genai": "2.30.0",
+    "dotenv": "16.4.5",
+    "drizzle-orm": "0.36.4",
+    "next": "14.2.33",
+    "postgres": "3.4.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.21",
+    "@types/node": "20.14.0",
+    "@types/react": "18.3.3",
+    "concurrently": "9.0.1",
+    "drizzle-kit": "0.28.1",
+    "express": "4.21.0",
+    "tsx": "4.19.1",
+    "typescript": "5.5.4",
+    "vitest": "2.1.1"
+  }
+}
